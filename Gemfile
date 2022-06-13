@@ -34,6 +34,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 gem 'graphql', '1.11.6'
 gem 'validate_url'
+gem 'rubocop-rails', require: false
 
 
 group :development, :test do
