@@ -6,7 +6,10 @@ module Mutations
     type Types::LinkType
 
     def resolve(description: nil, url: nil)
-      link.create!( description: description, url: url)
+      link.create!(description: description,
+                   url: url,
+                   user: context[:current_user]
+      )
     end
   end
 end
