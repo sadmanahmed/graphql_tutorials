@@ -14,8 +14,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: { minimum: 6, maximum: 72 }, format: { with: PASSWORD_FORMAT, message: "Password should contain lower case and digits"}
+  validates :password, length: { minimum: 6, maximum: 72 }, format: { with: PASSWORD_FORMAT, message: 'Password should contain lower case and digits'}
 
-  has_many :votes
+  has_many :votes, dependent: :destroy
   has_many :links
 end
